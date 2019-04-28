@@ -23,7 +23,7 @@ class App extends Component {
     const self = this
     const searchInput = this.state.input
     const searchApi = 'https://api.github.com/search/repositories?q=' + searchInput
-    console.log('api----', searchApi)
+
     this.setState({
       loading: true
     })
@@ -39,7 +39,7 @@ class App extends Component {
           });
       })
       .catch(function (err) {
-        console.log('Fetch Error-', err);
+        throw (err)
       });
   }
 
@@ -47,7 +47,6 @@ class App extends Component {
 
   render() {
     const { repolist, loading, input } = this.state
-    console.log('res---', repolist)
 
     const btnDis = !input ?
       <button type="submit" className="btn btn-sm btn-primary mb-2" disabled>search</button>
