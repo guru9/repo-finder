@@ -86,9 +86,9 @@ class App extends Component {
                             <img className="avatar" src={repo.owner.avatar_url} alt="user" />
                             <div className="user-name">{repo.name}</div>
                             <div className="repo-deatils">
-                              <a className="badge badge-light m-2">{repo.stargazers_count}</a>
-                              <a className="badge badge-light">{repo.forks}</a>
-                              <a className="badge badge-light m-2">{repo.open_issues}</a>
+                              <a href="true" className="badge badge-light m-2">{repo.stargazers_count}</a>
+                              <a href="true" className="badge badge-light">{repo.forks}</a>
+                              <a href="true" className="badge badge-light m-2">{repo.open_issues}</a>
                             </div>
                             <div className="repo-desc">
                               {repo.description}
@@ -107,7 +107,7 @@ class App extends Component {
                     <h6>loading...</h6> : ''
                 }
                 {
-                  repolist.length === 0 && loading == false ?
+                  repolist.length === 0 && loading === false ?
                     <h6>There is no repos. Please Search Repositories...</h6>
                     : ''
                 }
